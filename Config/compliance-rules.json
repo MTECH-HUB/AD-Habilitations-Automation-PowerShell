@@ -1,0 +1,200 @@
+{
+  "ComplianceRules": {
+    "UserAccounts": {
+      "MaxInactiveDays": 90,
+      "MaxPasswordAge": 90,
+      "RequiredAttributes": [
+        "Department",
+        "Manager",
+        "Title",
+        "Company"
+      ],
+      "ForbiddenAttributes": [
+        "PersonalPhone",
+        "PersonalEmail"
+      ],
+      "AccountNamingConvention": {
+        "Pattern": "^[a-z]+\\.[a-z]+$",
+        "Description": "Format: prenom.nom en minuscules"
+      }
+    },
+    "Groups": {
+      "MaxMembersInSensitiveGroups": 10,
+      "SensitiveGroups": [
+        "Domain Admins",
+        "Enterprise Admins",
+        "Schema Admins",
+        "Account Operators",
+        "Backup Operators",
+        "Print Operators",
+        "Server Operators"
+      ],
+      "RequireApprovalForGroups": [
+        "Domain Admins",
+        "Enterprise Admins",
+        "Account Operators"
+      ],
+      "ProhibitedCombinations": [
+        {
+          "Group1": "Domain Admins",
+          "Group2": "Guest",
+          "Reason": "Les administrateurs ne peuvent pas être invités"
+        }
+      ]
+    },
+    "Passwords": {
+      "MinLength": 12,
+      "RequireComplexity": true,
+      "RequireSymbols": false,
+      "MaxAge": 90,
+      "MinAge": 1,
+      "HistoryCount": 12,
+      "ProhibitedPasswords": [
+        "password",
+        "123456",
+        "admin",
+        "contoso"
+      ]
+    },
+    "Permissions": {
+      "MaxPrivilegedUsers": 20,
+      "RequireJustification": [
+        "Domain Admins",
+        "Enterprise Admins"
+      ],
+      "PeriodicReview": {
+        "Frequency": "Quarterly",
+        "RequiredApprovers": 2,
+        "AutoRemoveExpired": false
+      }
+    }
+  },
+  "RegulatoryCompliance": {
+    "GDPR": {
+      "DataRetention": {
+        "UserLogs": 365,
+        "AuditLogs": 2555,
+        "DeletedUserData": 90
+      },
+      "DataMinimization": {
+        "RestrictPersonalData": true,
+        "RequireConsentForCollection": false,
+        "AllowDataPortability": true
+      },
+      "PrivacyByDesign": {
+        "EncryptSensitiveData": true,
+        "PseudonymizeReports": true,
+        "MinimizeDataCollection": true
+      }
+    },
+    "SOX": {
+      "AccessControls": {
+        "RequireApproval": true,
+        "SegregationOfDuties": true,
+        "RegularAccessReview": "Quarterly"
+      },
+      "Documentation": {
+        "RequireChangeJustification": true,
+        "MaintainAuditTrail": true,
+        "DocumentProcedures": true
+      }
+    },
+    "ISO27001": {
+      "AccessManagement": {
+        "FormalAccessProcess": true,
+        "RegularReview": true,
+        "RemoveAccessOnTermination": true
+      },
+      "InformationSecurity": {
+        "ClassifyInformation": true,
+        "ProtectSensitiveData": true,
+        "MonitorAccess": true
+      }
+    }
+  },
+  "AuditRequirements": {
+    "LoggingEvents": [
+      "UserCreation",
+      "UserDeletion",
+      "UserModification",
+      "GroupMembershipChange",
+      "PasswordReset",
+      "AccountLockout",
+      "PrivilegeEscalation",
+      "LoginFailure",
+      "LoginSuccess"
+    ],
+    "ReportingFrequency": {
+      "SecurityEvents": "Daily",
+      "ComplianceReport": "Weekly",
+      "AccessReview": "Monthly",
+      "FullAudit": "Quarterly"
+    },
+    "RetentionPeriods": {
+      "SecurityLogs": 365,
+      "AuditReports": 2555,
+      "ComplianceReports": 2555,
+      "UserDataChanges": 1095
+    }
+  },
+  "Alerts": {
+    "CriticalEvents": [
+      {
+        "Event": "PrivilegedGroupChange",
+        "Condition": "Any change to Domain Admins group",
+        "Action": "ImmediateEmail",
+        "Recipients": ["security@contoso.local"]
+      },
+      {
+        "Event": "MassUserCreation",
+        "Condition": "More than 10 users created in 1 hour",
+        "Action": "EmailAndLog",
+        "Recipients": ["admin@contoso.local"]
+      },
+      {
+        "Event": "UnauthorizedAccess",
+        "Condition": "Access by non-authorized operator",
+        "Action": "BlockAndAlert",
+        "Recipients": ["security@contoso.local"]
+      }
+    ],
+    "ComplianceViolations": [
+      {
+        "Violation": "ExpiredUser",
+        "Condition": "User account expired but still enabled",
+        "Action": "DisableAndNotify",
+        "GracePeriod": 7
+      },
+      {
+        "Violation": "MissingManager",
+        "Condition": "User without manager assigned",
+        "Action": "NotifyHR",
+        "Recipients": ["hr@contoso.local"]
+      },
+      {
+        "Violation": "StaleAccount",
+        "Condition": "No login for 90+ days",
+        "Action": "DisableAfterNotification",
+        "GracePeriod": 14
+      }
+    ]
+  },
+  "Exceptions": {
+    "ServiceAccounts": {
+      "ExemptFromPasswordPolicy": true,
+      "ExemptFromInactivityRules": true,
+      "RequireDocumentation": true
+    },
+    "VIPUsers": {
+      "ExemptFromSomeRules": false,
+      "RequireAdditionalApproval": true,
+      "EnhancedMonitoring": true
+    },
+    "EmergencyAccess": {
+      "AllowEmergencyBypass": true,
+      "RequireJustification": true,
+      "AutoExpire": "24Hours",
+      "NotifyImmediately": true
+    }
+  }
+}

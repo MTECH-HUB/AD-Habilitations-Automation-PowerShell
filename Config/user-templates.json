@@ -1,0 +1,154 @@
+{
+  "StandardUser": {
+    "Description": "Modèle pour utilisateur standard",
+    "OrganizationalUnit": "OU=Standard Users,OU=Users,OU=Corporate,DC=contoso,DC=local",
+    "Groups": [
+      "Domain Users",
+      "Standard Users"
+    ],
+    "HomeDirectory": "\\\\fileserver\\home\\{username}",
+    "HomeDrive": "H:",
+    "ProfilePath": "\\\\fileserver\\profiles\\{username}",
+    "ScriptPath": "logon.bat",
+    "Company": "Contoso Corporation",
+    "PasswordNeverExpires": false,
+    "CannotChangePassword": false,
+    "AccountExpirationDate": null,
+    "RequiredAttributes": [
+      "Department",
+      "Title",
+      "Manager"
+    ]
+  },
+  "AdminUser": {
+    "Description": "Modèle pour administrateur",
+    "OrganizationalUnit": "OU=Admin Users,OU=Users,OU=Corporate,DC=contoso,DC=local",
+    "Groups": [
+      "Domain Users",
+      "IT Administrators"
+    ],
+    "Company": "Contoso Corporation",
+    "PasswordNeverExpires": false,
+    "CannotChangePassword": false,
+    "AccountExpirationDate": null,
+    "RequiredAttributes": [
+      "Department",
+      "Title",
+      "Manager",
+      "Mobile"
+    ],
+    "SpecialPermissions": {
+      "RequireSmartCard": false,
+      "TrustedForDelegation": false
+    }
+  },
+  "ServiceAccount": {
+    "Description": "Modèle pour compte de service",
+    "OrganizationalUnit": "OU=Service Accounts,OU=Users,OU=Corporate,DC=contoso,DC=local",
+    "Groups": [
+      "Domain Users"
+    ],
+    "Company": "Contoso Corporation",
+    "PasswordNeverExpires": true,
+    "CannotChangePassword": true,
+    "AccountExpirationDate": null,
+    "UserCannotChangePassword": true,
+    "PasswordNotRequired": false,
+    "RequiredAttributes": [
+      "Description",
+      "Department"
+    ],
+    "SpecialSettings": {
+      "ServicePrincipalName": "",
+      "TrustedForDelegation": false,
+      "AccountNotDelegated": true
+    }
+  },
+  "TemporaryUser": {
+    "Description": "Modèle pour utilisateur temporaire",
+    "OrganizationalUnit": "OU=Temporary Users,OU=Users,OU=Corporate,DC=contoso,DC=local",
+    "Groups": [
+      "Domain Users",
+      "Temporary Access"
+    ],
+    "Company": "Contoso Corporation",
+    "PasswordNeverExpires": false,
+    "CannotChangePassword": false,
+    "AccountExpirationDate": "+30Days",
+    "RequiredAttributes": [
+      "Department",
+      "Title",
+      "Manager",
+      "Description"
+    ],
+    "AutoCleanup": {
+      "Enabled": true,
+      "NotifyBeforeExpiration": 7,
+      "DisableAfterExpiration": true
+    }
+  },
+  "ExternalUser": {
+    "Description": "Modèle pour utilisateur externe",
+    "OrganizationalUnit": "OU=External Users,OU=Users,OU=Corporate,DC=contoso,DC=local",
+    "Groups": [
+      "Domain Users",
+      "External Access"
+    ],
+    "Company": "External",
+    "PasswordNeverExpires": false,
+    "CannotChangePassword": false,
+    "AccountExpirationDate": "+90Days",
+    "RequiredAttributes": [
+      "Department",
+      "Title",
+      "Manager",
+      "Description",
+      "Company"
+    ],
+    "Restrictions": {
+      "LogonWorkstations": "",
+      "LogonHours": "BusinessHours",
+      "DialInAccess": false
+    }
+  },
+  "ContractorUser": {
+    "Description": "Modèle pour contractuel",
+    "OrganizationalUnit": "OU=Contractors,OU=Users,OU=Corporate,DC=contoso,DC=local",
+    "Groups": [
+      "Domain Users",
+      "Contractor Access"
+    ],
+    "Company": "Contractor",
+    "PasswordNeverExpires": false,
+    "CannotChangePassword": false,
+    "AccountExpirationDate": "+180Days",
+    "RequiredAttributes": [
+      "Department",
+      "Title",
+      "Manager",
+      "Description",
+      "Company",
+      "EmployeeID"
+    ],
+    "Compliance": {
+      "RequireSecurityClearance": true,
+      "BackgroundCheckRequired": true,
+      "ContractEndDate": "Required"
+    }
+  },
+  "Default": {
+    "Description": "Modèle par défaut",
+    "OrganizationalUnit": "OU=Users,OU=Corporate,DC=contoso,DC=local",
+    "Groups": [
+      "Domain Users"
+    ],
+    "Company": "Contoso Corporation",
+    "PasswordNeverExpires": false,
+    "CannotChangePassword": false,
+    "AccountExpirationDate": null,
+    "RequiredAttributes": [
+      "Department",
+      "Title"
+    ]
+  }
+}

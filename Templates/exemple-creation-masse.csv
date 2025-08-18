@@ -1,0 +1,6 @@
+SamAccountName,GivenName,Surname,UserPrincipalName,EmailAddress,Department,Title,Company,Manager,Template
+j.dupont,Jean,Dupont,j.dupont@contoso.local,jean.dupont@contoso.local,IT,Développeur,Contoso Corporation,admin,StandardUser
+m.martin,Marie,Martin,m.martin@contoso.local,marie.martin@contoso.local,RH,Responsable RH,Contoso Corporation,admin,StandardUser
+p.bernard,Pierre,Bernard,p.bernard@contoso.local,pierre.bernard@contoso.local,Finance,Comptable,Contoso Corporation,admin,StandardUser
+l.durand,Lucie,Durand,l.durand@contoso.local,lucie.durand@contoso.local,Marketing,Chef de projet,Contoso Corporation,admin,StandardUser
+a.moreau,Antoine,Moreau,a.moreau@contoso.local,antoine.moreau@contoso.local,IT,Administrateur système,Contoso Corporation,admin,AdminUser

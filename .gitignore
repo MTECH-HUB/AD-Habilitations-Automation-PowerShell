@@ -1,0 +1,50 @@
+# Logs et fichiers temporaires
+Logs/*.log
+Logs/*.txt
+Reports/*.html
+Reports/*.csv
+Reports/*.xlsx
+Reports/*.json
+
+# Fichiers de configuration sensibles
+Config/settings.json
+Config/email-config.json
+
+# Fichiers temporaires PowerShell
+*.tmp
+*.temp
+~$*
+
+# Fichiers de sauvegarde
+*.bak
+*.backup
+
+# Dossiers temporaires
+temp/
+tmp/
+
+# Fichiers système Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Fichiers d'éditeur
+.vscode/
+*.swp
+*.swo
+*~
+
+# Fichiers de test personnalisés
+test-data/
+sandbox/
+
+# Certificats et clés (sécurité)
+*.pfx
+*.p12
+*.key
+*.crt
+*.pem
+
+# Fichiers de données sensibles
+uploads/
+exports/
