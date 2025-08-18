@@ -53,8 +53,8 @@ AD-Habilitations-Automation/
 
 1. Cloner le projet :
 ```powershell
-git clone <repository-url>
-cd AD-Habilitations-Automation
+git clone https://github.com/Eizi0/AD-Habilitations-Automation-PowerShell.git
+cd AD-Habilitations-Automation-PowerShell
 ```
 
 2. Installer les modules PowerShell requis :
@@ -127,4 +127,4 @@ Pour toute question ou problème :
 ---
 
 **Version :** 1.0.0  
-**Dernière mise à jour :** $(Get-Date -Format "dd/MM/yyyy")
+**Dernière mise à jour :10-08-2025
